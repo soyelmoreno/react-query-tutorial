@@ -5,17 +5,17 @@ type TodoCardProps = {
 };
 
 export function TodoCard({ todo }: TodoCardProps) {
-  function handleToggle(id) {
+  function handleToggle(id: number) {
     console.log(id);
   }
   return (
-    <div>
+    <div className="flex items-center gap-2">
       <input
         type="checkbox"
         checked={todo.completed}
         onChange={() => handleToggle(todo.id)}
       />
-      <div>{todo.title}</div>
+      <p className="m-0">{todo.title}</p>
       <button>Delete</button>
     </div>
   );

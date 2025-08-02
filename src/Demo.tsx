@@ -13,11 +13,13 @@ export function Demo() {
   }
 
   return (
-    <div>
+    <div className="p-3">
       <h1>React Query Tutorial</h1>
-      {todos?.map((todo) => (
-        <TodoCard key={todo.id} todo={todo} />
-      ))}
+      <div className="bg-indigo-50 p-3">
+        {todos?.map((todo) => (
+          <TodoCard key={todo.id} todo={todo} />
+        ))}
+      </div>
     </div>
   );
 }
