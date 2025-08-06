@@ -13,7 +13,9 @@ const todos = [
  */
 export async function fetchTodos(query = ""): Promise<Todo[]> {
   await new Promise((resolve) => setTimeout(resolve, 1000));
+
   console.log("Fetched todos");
+
   const filteredTodos = todos.filter((todo) =>
     todo.title.toLowerCase().includes(query.toLowerCase())
   );
@@ -37,6 +39,5 @@ export async function addTodo(todo: Pick<Todo, "title">): Promise<Todo> {
 
   // Todo is stored in memory and cleared on page reload
   todos.push(newTodo);
-
   return newTodo;
 }
